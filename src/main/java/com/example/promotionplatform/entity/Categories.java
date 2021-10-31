@@ -5,31 +5,23 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
-@Table(name = "users")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Users {
+@NoArgsConstructor
+public class Categories {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
-    private String email;
-
-    @Column(unique = true)
-    private String password;
-
     private String name;
-
-    private String phone;
-
-    private Integer role;
 
     private LocalDateTime created_datetime;
 
